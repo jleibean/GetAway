@@ -1,0 +1,92 @@
+<main id="flightDetails">
+  <section id="flightDetail">
+  <section class="FlightDetailForm">
+    <h2>When should we expect you?</h2>
+    <form [formGroup]="flightForm" (submit)="saveFlight()">
+      <div class="Airline">
+        <mat-form-field class="fullLengthInput">
+          <mat-label>Airline</mat-label>
+          <input
+            matInput
+            aria-label="Airline"
+            [matAutocomplete]="auto"
+            formControlName="airline"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            @for (airline of filteredAirlines | async; track airline) {
+            <mat-option [value]="airline">
+              <span>{{ airline }}</span>
+            </mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+
+      <div class="arrival">
+        <mat-form-field class="medLengthInput">
+          <mat-label>Flight Number</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="AA1234"
+            formControlName="flightNumber"
+          />
+        </mat-form-field>
+  
+        <mat-form-field class="smLengthInput">
+          <mat-label>Number of guests</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="2"
+            formControlName="numOfGuests"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="arrival">
+        <mat-form-field class="medLengthInput">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="arrivalDate"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="smLengthInput">
+          <mat-label>Arrival Time</mat-label>
+          <input
+            type="time"
+            matInput
+            placeholder="2:45"
+            formControlName="arrivalTime"
+          />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="fullLengthInput">
+          <mat-label>Comments</mat-label>
+          <textarea matInput formControlName="comments"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="buttonRow">
+        <div *ngIf="success === false" class="errorMessage">
+          <h4 class="errorMessage">Oops!</h4> Please fill out required information.
+        </div>
+        <button mat-raised-button type="submit" class="styledButton medButton">Save Flight</button>
+      </div>
+    </form>
+  </section>
+
+</section>
+<section id="imageContainer" class='formImage'></section>
+</main>

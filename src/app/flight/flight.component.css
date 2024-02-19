@@ -1,0 +1,36 @@
+#imageContainer {
+  grid-area: image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: -1px 0px 10px 3px #888888;
+}
+.formImage{
+    background-image: url("../../assets/resort.jpg");
+    background-position: center;
+}
+#flightDetail {
+  grid-area: form;
+  padding: 1.5em 2em;
+}
+#flightDetails {
+  display: grid;
+  grid-template-areas: "form image";
+  grid-template-columns: 50vw 1fr;
+  height: 100vh;
+  background-color: #d6d6d6;
+}
+h2, .buttonRow{
+    text-align: center;
+    align-items: center;
+}
+
+.errorMessage, .mat-input-invalid .mat-input-placeholder {
+    color: #f60;
+}
+.errorMessage h4{
+    margin: 1px;
+}
+
+.mat-input-invalid .mat-input-ripple {
+    background-color: #f60;
+}

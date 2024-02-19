@@ -1,0 +1,23 @@
+#loginScreen{
+    height: 100vh;
+    background-image: url('../../assets/mountain.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#loginBox{
+    background-color: rgba(120, 117, 117, 0.71);
+    align-self: center;
+    text-align: center;
+    padding: 2rem 3rem;
+    border: 2px solid #000
+}
+
+.loginText{
+    color: white;
+}
+
+#loginButtons{
+    margin-top: 2.5rem;
+}
