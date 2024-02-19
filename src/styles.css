@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Adamina", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #1e1e1e;
+  background-color: #d6d6d6;
+}

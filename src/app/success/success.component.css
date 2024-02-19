@@ -1,0 +1,36 @@
+#success {
+    display: grid;
+    grid-template-areas: "message image";
+    grid-template-columns: 50vw 1fr;
+    height: 100vh;
+  }
+
+  .styledButton.travel{
+    width: 100%;
+    padding: 1rem;
+}
+
+#imageContainer {
+    grid-area: image;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: -1px 0px 10px 3px #888888;
+  }
+  .successImage{
+      background-image: url("../../assets/hammock.jpg");
+  }
+  .successIcon{
+    color: #F60;
+    width: 15rem;
+    height: 15rem;
+    font-size: 15rem;
+  }
+  
+  .flightDetailSuccess{
+    grid-area: message;
+    height: 100vh;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }

@@ -1,0 +1,16 @@
+.travelGif{
+    width: 50%;
+    margin-top: -5%;
+}
+.styledButton.home{
+    width: 20%;
+    padding: 1rem;
+    background-color: #f60;
+}
+.notFound{
+    text-align: center;
+}
+.credit{
+    margin-top: -5%;
+    margin-bottom: 3%;
+}
