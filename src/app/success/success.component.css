@@ -1,36 +1,57 @@
 #success {
-    display: grid;
-    grid-template-areas: "message image";
-    grid-template-columns: 50vw 1fr;
-    height: 100vh;
-  }
+  display: grid;
+  grid-template-rows: 60vh;
+  grid-template-areas:
+    "image" "message";
+  background-color: #d6d6d6;
+  height: 100vh;
+}
 
-  .styledButton.travel{
-    width: 100%;
-    padding: 1rem;
+.styledButton.travel {
+  width: 100%;
+  padding: 1rem;
 }
 
 #imageContainer {
-    grid-area: image;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: -1px 0px 10px 3px #888888;
-  }
-  .successImage{
-      background-image: url("../../assets/hammock.jpg");
+  grid-area: image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: -1px 0px 10px 3px #888888;
+}
+
+@media (min-width: 600px) {
+  #success {
+    grid-template-columns: 50vw;
+    grid-template-areas: "message image";
   }
   .successIcon{
-    color: #F60;
-    width: 15rem;
-    height: 15rem;
-    font-size: 15rem;
+    display: inline-block;
   }
-  
-  .flightDetailSuccess{
-    grid-area: message;
+  #imageContainer, .flightDetailSuccess{
     height: 100vh;
-    display:grid;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
   }
+
+}
+@media (max-width: 600px) {
+  .successIcon{
+    display: none;
+  }
+}
+
+.successImage {
+  background-image: url("https://i.postimg.cc/65K1yCyj/hammock.jpg");
+}
+.successIcon {
+  color: #f60;
+  width: 15rem;
+  height: 15rem;
+  font-size: 15rem;
+}
+
+.flightDetailSuccess {
+  grid-area: message;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}

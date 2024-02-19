@@ -38,16 +38,28 @@ h2{
 mat-form-field{
   margin:.5em;
 }
+@media (min-width: 1194px) {
+  .medButton{
+    width: 60%;
+  }
+  .fullLengthInput{
+    width: 97%;
+  }
+  .medLengthInput {
+    width: 70%;
+  }
+  .smLengthInput {
+    width: 24%;
+    align-items: right;
+  }
+}
+
+@media (max-width: 1193px) {
+  .fullLengthInput, .medLengthInput, .smLengthInput {
+    width: 97%;
+  }
+}
+
 .medButton{
   width: 60%;
-}
-.fullLengthInput {
-  width: 97%;
-}
-.medLengthInput {
-  width: 65%;
-}
-.smLengthInput {
-  width: 29%;
-  align-items: right;
 }

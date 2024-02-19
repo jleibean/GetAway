@@ -1,16 +1,42 @@
 .travelGif{
-    width: 50%;
+    width: 75%;
     margin-top: -5%;
 }
 .styledButton.home{
-    width: 20%;
+    width: 100%;
     padding: 1rem;
     background-color: #f60;
+    border:2px solid #1e1e1e;
 }
 .notFound{
     text-align: center;
+    display:grid;
+    grid-template-areas: "travel" "error" "button";
+    width:80vw;
 }
 .credit{
     margin-top: -5%;
     margin-bottom: 3%;
 }
+.errorText {
+    grid-area: error;
+}
+.travelImage{
+    grid-area: travel;
+}
+.homeButton{
+    grid-area: button;
+}
+@media (min-width: 600px) {
+    .travelGif{
+      width: 50%;
+    }
+    .styledButton.home{
+        width: 20%;
+    }
+    .notFound{
+        width:50vw;
+        height: 100vh;
+        grid-template-areas: "error" "travel" "button";
+    }
+  }

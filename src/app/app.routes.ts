@@ -20,10 +20,8 @@ export function flagGuard(
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'flight', component: FlightComponent, 
-    // canActivate: [flagGuard('/login')]
-  },
-  { path: 'success', component: SuccessComponent},
+    { path: 'flight', component: FlightComponent, canActivate: [flagGuard('/login')]},
+    { path: 'success', component: SuccessComponent, canActivate: [flagGuard('/login')]},
     { path: '',   redirectTo: '/login', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];

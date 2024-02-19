@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatTooltip} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon'; 
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -60,17 +61,16 @@ export class FlightComponent {
 
   saveFlight() {
     !this.flightForm.value.comments ? delete this.flightForm.value.comments : undefined;
-    console.log(this.flightForm.value);
     const url = 'https://us-central1-crm-sdk.cloudfunctions.net/flightInfoChallenge';
-    const headers = { candidate: "Jacqueline Quidas", token: "WW91IG11c3QgYmUgdGhlIGN1cmlvdXMgdHlwZS4gIEJyaW5nIHRoaXMgdXAgYXQgdGhlIGludGVydmlldyBmb3IgYm9udXMgcG9pbnRzICEh" };
-  //   this.http.post<any>(url, this.flightForm.value, { headers }).subscribe({
-  //     next: () => {
-  //         this.router.navigate(['/success']);
-  //     },
-  //     error: error => {
-  //         this.success = false;
-  //         this.errorMessage = error.message;
-  //     }
-  // });
+    const headers:any = { 'candidate': 'Jacqueline Quidas', 'token': environment.Api_Key };
+    this.http.post<any>(url, this.flightForm.value, { headers }).subscribe({
+      next: () => {
+          this.router.navigate(['/success']);
+      },
+      error: error => {
+          this.success = false;
+          this.errorMessage = error.message;
+      }
+  });
   }
 }
