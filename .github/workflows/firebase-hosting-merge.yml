@@ -5,11 +5,7 @@ name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
-<<<<<<< Updated upstream
-      - main
-=======
       - master
->>>>>>> Stashed changes
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
